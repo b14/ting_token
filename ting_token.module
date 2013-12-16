@@ -69,6 +69,9 @@ function ting_token_menu() {
   return $items;
 }
 
+/**
+ * Retrive the insert form.
+ */
 function ting_token_get_insert_form($ajax, $ids = '') {
   $is_ajax = $ajax === 'ajax';
   $form = drupal_get_form('ting_token_insert_form', $ids);
@@ -89,6 +92,9 @@ function ting_token_get_insert_form($ajax, $ids = '') {
   }
 }
 
+/**
+ * Insert token form
+ */
 function ting_token_insert_form($form, &$form_state) {
   drupal_add_library('system', 'ui.dialog');
   $form['#tree'] = TRUE;

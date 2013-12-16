@@ -34,9 +34,11 @@ Drupal.wysiwyg.plugins['tingTokenInsert'] = {
     }
     if (typeof content !== 'undefined') {
       Drupal.wysiwyg.plugins.tingTokenInsert.insert_form(data, settings, instanceId);
-      //Drupal.wysiwyg.instances[instanceId].insert(content);
     }
   },
+  /**
+   * Insert form and dialog.
+   */
   insert_form: function (data, settings, instanceId) {
     // Location, where to fetch the dialog.
     var aurl = Drupal.settings.basePath + 'ting_token/insert/ajax';
@@ -120,7 +122,6 @@ Drupal.wysiwyg.plugins['tingTokenInsert'] = {
    * Helper function to return ids from a placeholder.
    */
   _getIds: function (content) {
-    console.log();
     var ids = ''
       viewMode = Drupal.settings.ting_token.viewMode;
     if(content.indexOf('[ting:' + viewMode + ':') === 0 && content.indexOf(']') === (content.length - 1)) {
